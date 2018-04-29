@@ -1,25 +1,35 @@
 body{
-    background: black;
-    color: white;
+    background:#EFEFEF;
     margin: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
 }
 .clearfix::after{
     content: '';
     display: block;
     clear: both;
 }
-.clearfix {
-    padding: 23.5px 16px 23.5px 16px;
+.top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 33px;
 }
-.top>nav>ul{
+.top .topNavBar-inner{
+    padding: 0 16px 0 16px
+}
+.top nav>ul{
     list-style: none;margin: 0;padding: 0;border: 1px solid  red；
 }
-.top>nav>ul>li{
+.top nav>ul>li{
     float: left;
     margin-left: 17px;
     margin-right: 17px;
 }
-.top>nav>ul>li>a{
+.top nav>ul>li>a{
     font-size: 12px;
     color: #b7b7b7;
     font-weight: bolder;
@@ -29,7 +39,7 @@ body{
     padding-bottom: 5px;
     display: block;
 }
-.top>nav>ul>li>a:hover{
+.top nav>ul>li>a:hover{
     border-bottom: 3px solid #E06567;
 }
 a{
@@ -42,7 +52,7 @@ a{
 }
 .top .logo .rs{
     margin-right: 4px;
-    color: #E6686A;
+    color: green;
 }
 .top .logo .card{
     color: #9A9DA2;
@@ -52,4 +62,95 @@ a{
 }
 .button{
     color: white;
+}
+
+
+.banner {
+    height: 515px;
+    background-position: center center;
+    background-size: cover; /*盖住所有的面积，并按比例缩放*/
+}
+.banner .mask{
+    height: 515px;
+    background: black;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.UserCard{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+.UserCard .welcome {
+    background: #07CB79;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 4px 13px;
+    line-height: 22px;
+    margin-bottom: 41px
+}
+.UserCard .welcome .triangle{
+    display: block;
+    border: solid 10px transparent;
+    border-top-width: 0px;
+    border-left-color: #07CB79; 
+    position: absolute
+}
+.UserCard .text {
+    float: left;
+    margin-left: 79px;
+    width: 470px;
+}
+.UserCard .picture {
+    float: left;
+    margin-left: 62px;
+}
+.UserCard .pictureAndText {
+    margin-top: 50px
+}
+.UserCard .text h1{
+    margin-bottom: 10px;
+}
+hr{
+    border: none;
+    border-top: 1px solid #DEDEDE;
+    margin-top: 28px;
+    margin-bottom: 30px;
+}
+.UserCard .text dl dt{
+    float: left;
+    width: 30%;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+.UserCard .text dl dd{
+    float: left;
+    width: 70%;
+    margin-bottom: 18px;
+    color: #A2A5AC;
+
+}
+.UserCard .foot{
+    background: #07CB79;
+    text-align: center;
+}
+.UserCard .foot svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    margin: 0 16px;
+    vertical-align: top;
+}
+.UserCard .foot a{
+    border: 1px solid transparent;
+    display: inline-block;
+    border-radius: 60%;
+    padding: 5px 0;
+    line-height: 30px;
+    margin: 25px 0;
+}
+.UserCard .foot a:hover{
+    background: #06B66D;
+
 }
