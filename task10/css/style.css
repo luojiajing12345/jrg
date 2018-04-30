@@ -61,7 +61,7 @@ a{
     color: white;
 }
 .button{
-    color: white;
+    color: black;
 }
 
 
@@ -107,7 +107,8 @@ a{
     margin-left: 62px;
 }
 .UserCard .pictureAndText {
-    margin-top: 50px
+    padding-top: 50px;
+    padding-bottom: 53px;
 }
 .UserCard .text h1{
     margin-bottom: 10px;
