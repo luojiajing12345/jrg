@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+    <header></header>
+    <main>
+    	<div id="mainxxx"></div>
+    </main>
+    <footer></footer>
+    <script>
+    	keys = {
+    		0:{0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',lenght:10},
+    		1:{0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',lenght:9},
+    		2:{0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m',lenght:7},
+    		lenght:3
+    	}
+    	hash = {
+    		'q':'qq.com',
+    		'w':'weibo.com',
+    		'e':'ele.me',
+    		'r':'renren.com',
+    		't':'tenxun.com',
+    		'y':'yy.com',
+    		'a':'alibaba.com',
+    		'z':'zhihu.com',
+    		'm':'meituan.com',
+    	}
+    	var hashLocalStorage = JSON.parse(localStorage.getItem('aaa') || 'null')//取出localstrage中的aaa对应的hash
+    	if(hashLocalStorage){
+    		hash = hashLocalStorage
+    	}
+    	index = 0
+    	while(index<keys['lenght']){
+    		div1 = document.createElement('div')
+   			mainxxx.appendChild(div1)
+   			row = keys[index]
+   			index2 = 0
+   			while(index2<row['lenght']){
+   				kbdxxx = document.createElement('kbd')
+   				kbdxxx.textContent = row[index2]
+   				buttonxxx = document.createElement('button')
+   				buttonxxx.textContent = '编辑'
+   				buttonxxx.id = row[index2]
+   				buttonxxx.onclick = function(xx){
+   					hashkey = xx.target.id
+   					x = prompt('请输入一个网址')
+   					hash[hashkey] = x
+   					localStorage.setItem('aaa',JSON.stringify(hash))
+   				}
+   				kbdxxx.appendChild(buttonxxx)
+   				div1.appendChild(kbdxxx)
+
+   				index2++
+   			}
+   			index++
+    	}
+    	document.onkeypress = function(xxx){
+    		keys = xxx['key']
+    		values = hash[keys]
+    		weburl = 'http://' + values
+    		window.open(weburl,'_blank')
+    	}
+		
+    </script>
+</body>
+</html>
