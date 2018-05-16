@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+    <header></header>
+    <main>
+    	<div id="mainxxx"></div>
+    </main>
+    <footer></footer>
+    <script>
+    	var keys = {
+    		0:{0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',lenght:10},
+    		1:{0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',lenght:9},
+    		2:{0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m',lenght:7},
+    		lenght:3
+    	}
+    	var hash = {
+    		'q':'qq.com',
+    		'w':'weibo.com',
+    		'e':'ele.me',
+    		'r':'renren.com',
+    		'y':'yy.com',
+    		'a':'alibaba.com',
+    		'z':'zhihu.com',
+    		'm':'meituan.com',
+    	}
+    	var hashLocalStorage = getFromLocalStorage('aaa')//取出localstrage中的aaa对应的hash
+    	if(hashLocalStorage){
+    		hash = hashLocalStorage
+    	}
+
+		for(var index=0; index<keys['lenght']; index++){
+			var div1 = tag('div',{className:'div1'})
+   			mainxxx.appendChild(div1)
+   			var row = keys[index]
+   			for (var index2=0; index2<row['lenght']; index2++) {
+
+   				var span = tag('span',{className:'text'})
+   				span.textContent = row[index2]
+   				
+   				var kbdxxx = tag('kbd',{className:'kbda'})
+   				kbdxxx.appendChild(span)
+   				
+   				var buttonxxx = tag('button')
+   				buttonxxx.textContent = '编辑'
+   				buttonxxx.id = row[index2]
+   				
+   				var imgxxx = tag('img')
+   				if(hash[row[index2]]){
+   					imgxxx.src = 'http://'+hash[row[index2]]+'/favicon.ico'
+   				}else{
+   					imgxxx.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+   				}
+   				imgxxx.onerror = function(xxxx){
+   					xxxx.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+   				}
+
+   				kbdxxx.appendChild(imgxxx)
+    			kbdxxx.appendChild(buttonxxx)
+   				div1.appendChild(kbdxxx)  	
+   				
+   				buttonxxx.onclick = function(xx){
+    				var button2 = xx['target']
+    				var img2 = button2.previousSibling
+   					var hashkey = xx.target.id
+   					var x = prompt('请输入一个网址')
+   					hash[hashkey] = x
+   					img2.src = 'http://'+ x + '/favicon.ico' 
+   					localStorage.setItem('aaa',JSON.stringify(hash))
+   				}
+
+
+   			}
+		}
+
+    	document.onkeypress = function(xxx){
+    		var keys = xxx['key']
+    		var values = hash[keys]
+    		var weburl = 'http://' + values
+    		window.open(weburl,'_blank')
+    	}
+    	//封装的函数
+		function getFromLocalStorage(name){
+    		JSON.parse(localStorage.getItem(name) || 'null')
+    	}
+		function tag(tagName,attributes){
+			var element = document.createElement(tagName)
+			for(var key in attributes){
+				element[key]=attributes[key]
+			}
+			return element
+		}
+    </script>
+</body>
+</html>

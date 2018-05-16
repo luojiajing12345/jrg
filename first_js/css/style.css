@@ -1,0 +1,72 @@
+*{
+	margin: 0;
+}
+body {
+	background: url(../img/sky.png) #D1D1D1 no-repeat center center;
+	background-size: cover
+}
+#mainxxx div>kbd,main>kbd{
+	display: inline-block;
+	height: 4em;
+	width: 4em;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-family: helvetica;
+}
+#mainxxx div:nth-child(2){
+	margin-left:-10px;
+}
+#mainxxx div:nth-child(3){
+	margin-left:-75px;
+}
+main>#mainxxx{
+	display:inline-block;
+	padding: 20px;
+	background: rgba(255,255,255,0.5);
+	border-radius: 10px;
+}
+main{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+#mainxxx div>kbd>button{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: none;
+}
+kbd>img{
+	width: 16px;
+	height: 16px;
+}
+#mainxxx div>kbd:hover>button{
+	display: block;
+}
+#mainxxx>div>.kbda{
+    height: 40px;
+    width: 50px;
+    background: linear-gradient(to bottom, rgba(41,41,41,1) 0%, rgba(17,17,17,1) 100%););
+    color: #D1D1D1;
+    border: solid 1px #393939;
+    border-radius: 11px;
+    box-shadow: 0 0 0 1px #1A1B1C,0 0 0 2px #282929,0 3px 0 2px #0D0D0D;
+    margin: 0 10px;
+    position: relative;
+}
+#mainxxx .div1 {
+	margin: 20px 0px;
+}
+.kbda .text {
+	position: absolute;
+	top: 3px;
+	left: 5px;
+}
+.kbda img{
+	position: absolute;
+	bottom: 4px;
+	right: 4px;
+}
