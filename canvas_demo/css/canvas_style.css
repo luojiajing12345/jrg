@@ -5,6 +5,13 @@
 body{
 	overflow: hidden;
 }
+#canvas{
+	display: block;
+	background: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
 ul,ol{
 	list-style: none;
 }
