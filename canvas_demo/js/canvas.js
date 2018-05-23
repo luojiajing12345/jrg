@@ -8,7 +8,6 @@ canvasSize(canvas)
 listenToUser(canvas)
 listenToUser()
 
-//使画板宽高和页面宽高一样大小
 
 var eraserEnable = false
 pen.onclick = function(){
@@ -70,6 +69,7 @@ download.onclick = function(){
     a.target = '_blank'
     a.click()
 }
+
 function canvasSize(canvas) {
 	wAndH()
 	window.onresize = function() {
