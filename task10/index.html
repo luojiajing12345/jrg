@@ -10,63 +10,7 @@
 		<title>方方的简历</title>
 		<script src="//at.alicdn.com/t/font_648422_rd07rkmk5f561or.js"></script>
 		<style>
-			.loading {
-				width: 200px;
-				height: 200px;
-				display: flex;
-				position: relative;
-			}
-			
-			.loading::before,
-			.loading::after {
-				content: '';
-				position: absolite;
-				width: 30px;
-				height: 30px;
-				border-radius: 50%;
-				background: black;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				animation: become 1.5s linear infinite;
-			}
-			
-			.loading::after {
-				animation-delay: 0.75s;
-			}
-			
-			@keyframes become {
-				0% {
-					width: 0;
-					height: 0;
-					opacity: 1;
-				}
-				100% {
-					width: 100px;
-					height: 100px;
-					opacity: 0;
-				}
-			}
-			
-			.first_welcome {
-				display: none;
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: #888;
-				z-index: 1;
-				justify-content: center;
-				align-items: center;
-			}
-			
-			.first_welcome.active {
-				display: flex;
-			}
+
 		</style>
 	</head>
 
@@ -75,8 +19,8 @@
 			<div class="loading"></div>
 		</div>
 
-		<div class="top clearfix">
-			<div class="topNavBar-inner clearfix">
+		<div id='Top' class="top clearfix">
+			<div id='topNavBar' class="topNavBar-inner clearfix">
 				<a class="logo" href="#" alt="logo" style="float: left;">
 					<span class="rs">RS</span><span class="card">card</span>
 				</a>
@@ -88,11 +32,21 @@
 						<li>
 							<a href="#">技能</a>
 						</li>
-						<li>
+						<li class="menuTigger">
 							<a href="#">作品</a>
+							<ul class="submenu">
+								<li>作品1</li>
+								<li>作品2</li>
+								<li>作品3</li>
+							</ul>
 						</li>
-						<li>
+						<li class="menuTigger">
 							<a href="#">博客</a>
+							<ul class="submenu">
+								<li>博客1</li>
+								<li>博客2</li>
+								<li>博客3</li>
+							</ul>
 						</li>
 						<li>
 							<a href="#">日历</a>
@@ -251,10 +205,26 @@
 			</div>
 		</main>
 		<script type="text/javascript">
-			setTimeout(function(){
+			setTimeout(function() {
 				firstWelcome.classList.remove('active')
-			},3000)
+			}, 3000)
+			window.onscroll = function(a) {
+				if(window.scrollY > 0) {
+					Top.classList.add('sticky')
 
+				} else {
+					Top.classList.remove('sticky')
+				}
+			}
+			let liTags = document.querySelectorAll('nav>ul>li')
+			for(let i = 0; i < liTags.length; i++){
+				liTags[i].onmouseenter = function(x){
+					x.currentTarget.classList.add('active')
+				}
+				liTags[i].onmouseleave = function(x){
+					x.currentTarget.classList.remove('active')
+				}
+			}
 		</script>
 	</body>
 
