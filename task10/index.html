@@ -5,18 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/loading.css" />
     <title>方方的简历</title>
     <script src="//at.alicdn.com/t/font_648422_rd07rkmk5f561or.js"></script>
-    <style type="text/css">
-        .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
-        }
+    <style>
+.loading {
+  width:200px;
+  height:200px;
+  display:flex;
+  position:relative;
+}
+.loading::before,.loading::after{
+  content:'';
+  position:absolite;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:black;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  animation:become 1.5s linear infinite;
+}
+.loading::after{
+  animation-delay:0.75s;
+}
+@keyframes become{
+  0%{
+    width:0;
+    height:0;
+    opacity:1;
+  }
+  100%{
+    width:100px;
+    height:100px;
+    opacity:0;
+  }
+}
+    	.first_welcome{display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background:#888;z-index: 1;justify-content: center;align-items: center;}
+    	.first_welcome.active{display: flex;}
     </style>
 </head>
 <body>
+	<div id='firstWelcome' class="first_welcome active">
+		<div class="loading"></div>
+	</div>
+
     <div class="top clearfix">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#" alt="logo" style="float: left;">
@@ -180,5 +217,9 @@
             </div>
         </div>
     </main>
+    <script type="text/javascript">
+    	firstWelcome.classList.remove('active')
+    	
+    </script>
 </body>
 </html>
