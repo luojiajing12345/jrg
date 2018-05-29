@@ -27,13 +27,13 @@
 				<nav style="float: right;">
 					<ul class="clearfix">
 						<li>
-							<a href="#">关于</a>
+							<a href="#siteAbout">关于</a>
 						</li>
 						<li>
-							<a href="#">技能</a>
+							<a href="#siteSkills">技能</a>
 						</li>
 						<li class="menuTigger">
-							<a href="#">作品</a>
+							<a href="#siteWorks">作品</a>
 							<ul class="submenu">
 								<li>作品1</li>
 								<li>作品2</li>
@@ -65,7 +65,7 @@
 			<div class="mask"></div>
 		</div>
 		<main class="main">
-			<div class="UserCard clearfix">
+			<div id="siteAbout" class="UserCard clearfix">
 				<div class="pictureAndText clearfix">
 					<div class="picture">
 						<img src="./img/rs-photo-v1.jpg" alt="头像" width="299px" height="347px">
@@ -115,7 +115,7 @@
 
 			<p class="self_introduction">方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br> 技能：前端开发，Rails 开发，Node.js 开发
 			</p>
-			<div class="skill">
+			<div id="siteSkills" class="skill">
 				<h2 class="">技能</h2>
 				<ol class="clearfix">
 					<li>
@@ -168,7 +168,7 @@
 					</li>
 				</ol>
 			</div>
-			<div class="portfolio">
+			<div id="siteWorks" class="portfolio">
 				<h2 class>作品集</h2>
 				<nav>
 					<ol class="clearfix">
@@ -223,6 +223,18 @@
 				}
 				liTags[i].onmouseleave = function(x){
 					x.currentTarget.classList.remove('active')
+				}
+			}
+			let aTags = document.querySelectorAll('nav>ul>li>a')
+			for(let i=0;i<aTags.length;i++){
+				aTags[i].onclick = function(x){
+					x.preventDefault()
+					let a = x.currentTarget
+					let href =a.getAttribute('href')
+					let element = document.querySelector(href)
+					let rect = element.getBoundingClientRect()
+					let top = element.offsetTop
+					window.scrollTo(0,top-60)
 				}
 			}
 		</script>
