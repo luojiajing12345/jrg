@@ -3,7 +3,11 @@ var context = canvas.getContext('2d');
 var lineWidth = 5
 
 canvasSize(canvas)
+function preventBehavior(e) {
+	e.preventDefault()
+}
 
+document.addEventListener("touchmove", preventBehavior, false)
 /***/
 listenToUser(canvas)
 listenToUser()
