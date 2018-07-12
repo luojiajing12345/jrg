@@ -1,41 +1,50 @@
-body{
-    background:#EFEFEF;
+body {
+    background: #EFEFEF;
     margin: 0;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
+
 .icon {
- 	width: 1em; height: 1em;
- 	vertical-align: -0.15em;
- 	fill: currentColor;
-  	overflow: hidden;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
 }
-.clearfix::after{
+
+.clearfix::after {
     content: '';
     display: block;
     clear: both;
 }
-[data-x].active{
-	outline: 10px solid red;
+
+[data-x].active {
+    outline: 10px solid red;
 }
-[data-x].offset{
-	transform: translateY(100px);
+
+[data-x].offset {
+    transform: translateY(100px);
 }
-[data-x]{
-	transform: translateY(0);
-	transition: all 0.5s;
+
+[data-x] {
+    transform: translateY(0);
+    transition: all 0.5s;
 }
-@keyframes slideUp{
-	0%{
-		transform: translateY(-30px);
-	}
-	100%{
-		transform: translateY((0));
-	}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY((0));
+    }
 }
-.top{
+
+.top {
     position: fixed;
     top: 0;
     left: 0;
@@ -44,21 +53,28 @@ body{
     transition: all 1s;
     color: #b7b7b7;
 }
-.top .topNavBar-inner{
+
+.top .topNavBar-inner {
     padding: 0px 16px 12px 16px
 }
-.top nav>ul{
-    list-style: none;margin: 0;padding: 0;border: 1px solid  red；
+
+.top nav>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid red；
 }
-.top nav>ul>li{
+
+.top nav>ul>li {
     float: left;
     margin-left: 17px;
     margin-right: 17px;
     position: relative;
 }
-.top nav>ul>li>a{
+
+.top nav>ul>li>a {
     font-size: 12px;
-	color:inherit;
+    color: inherit;
     font-weight: bolder;
     border-bottom: 4px solid transparent;
     border-top: 4px solid transparent;
@@ -67,95 +83,112 @@ body{
     display: block;
     position: relative;
 }
+
 .top nav>ul>li.active>a::before,
-.top nav>ul>li.highlight>a::before{
-	content: '';
-	display: block;
-	position: absolute;
-	top:100%;
-	left: 0;
-	width: 100%;
-	background: #e06567;
-	height: 3px;
-	animation: menuSlide 0.3s;
+.top nav>ul>li.highlight>a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #e06567;
+    height: 3px;
+    animation: menuSlide 0.3s;
 }
-@keyframes menuSlide{
-	0%{
-		width: 0;
-	}
-	100%{
-		width: 100%;
-	}
+
+@keyframes menuSlide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
-.top .submenu{
-	display: none;
-	position: absolute;
-	right: 0;
-	top: 100%;
-	background: white;
-	color: #3D4451;
-	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+.top .submenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    color: #3D4451;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-.top li.active>.submenu{
-	display:block;
-	animation: submentSlide 0.3s;
+
+.top li.active>.submenu {
+    display: block;
+    animation: submentSlide 0.3s;
 }
-@keyframes submentSlide{
-	0%{
-		margin-right:100% ;
-	}
-	100%{
-		margin-right: 0%;
-	}
-}{
-	from{}
-	to{}
+
+@keyframes submentSlide {
+    0% {
+        margin-right: 100%;
+    }
+    100% {
+        margin-right: 0%;
+    }
 }
-.top .submenu>li{
-	white-space: nowrap;
-	padding: 5px 10px;
+
+    {
+    from {}
+    to {}
 }
-a{
+
+.top .submenu>li {
+    white-space: nowrap;
+    padding: 5px 10px;
+}
+
+a {
     text-decoration: none;
 }
-.top .logo{
+
+.top .logo {
     font-size: 24px;
     font-family: "Arial Black";
     height: 34px;
 }
-.top .logo .rs{
+
+.top .logo .rs {
     margin-right: 4px;
     color: green;
 }
-.top .logo .card{
+
+.top .logo .card {
     color: #9A9DA2;
 }
-.foot>a{
+
+.foot>a {
     color: white;
 }
-.button{
+
+.button {
     color: black;
 }
-
 
 .banner {
     height: 515px;
     background-position: center center;
-    background-size: cover; /*盖住所有的面积，并按比例缩放*/
+    background-size: cover;
+    /*盖住所有的面积，并按比例缩放*/
 }
-.banner .mask{
+
+.banner .mask {
     height: 515px;
     background: black;
     background-color: rgba(0, 0, 0, 0.8);
 }
-.UserCard{
+
+.UserCard {
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
     margin-top: -300px;
-    box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.51);
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.51);
 }
+
 .UserCard .welcome {
     background: #07CB79;
     color: white;
@@ -165,60 +198,70 @@ a{
     line-height: 22px;
     margin-bottom: 41px
 }
-.UserCard .welcome .triangle{
+
+.UserCard .welcome .triangle {
     display: block;
     border: solid 10px transparent;
     border-top-width: 0px;
-    border-left-color: #07CB79; 
+    border-left-color: #07CB79;
     position: absolute
 }
+
 .UserCard .text {
     float: left;
     margin-left: 79px;
     width: 470px;
 }
+
 .UserCard .picture {
     float: left;
     margin-left: 62px;
 }
+
 .UserCard .pictureAndText {
     padding-top: 50px;
     padding-bottom: 53px;
 }
-.UserCard .text h1{
+
+.UserCard .text h1 {
     margin-bottom: 10px;
 }
-hr{
+
+hr {
     border: none;
     border-top: 1px solid #DEDEDE;
     margin-top: 28px;
     margin-bottom: 30px;
 }
-.UserCard .text dl dt{
+
+.UserCard .text dl dt {
     float: left;
     width: 30%;
     margin-bottom: 18px;
     font-weight: bold;
 }
-.UserCard .text dl dd{
+
+.UserCard .text dl dd {
     float: left;
     width: 70%;
     margin-bottom: 18px;
     color: #A2A5AC;
-
 }
-.UserCard .foot{
+
+.UserCard .foot {
     background: #07CB79;
     text-align: center;
 }
-.UserCard .foot svg{
+
+.UserCard .foot svg {
     width: 30px;
     height: 30px;
     fill: white;
     margin: 0 16px;
     vertical-align: top;
 }
-.UserCard .foot a{
+
+.UserCard .foot a {
     border: 1px solid transparent;
     display: inline-block;
     border-radius: 60%;
@@ -226,10 +269,11 @@ hr{
     line-height: 30px;
     margin: 25px 0;
 }
-.UserCard .foot a:hover{
-    background: #06B66D;
 
+.UserCard .foot a:hover {
+    background: #06B66D;
 }
+
 body>main>p .downloadaa {
     font-size: 14px;
     line-height: 16px;
@@ -243,10 +287,12 @@ body>main>p .downloadaa {
     margin-top: 57px;
     transition: box-shadow 0.2s;
 }
-body>main>p .downloadaa:hover{
-    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.51);
+
+body>main>p .downloadaa:hover {
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.51);
 }
-body>main .self_introduction{
+
+body>main .self_introduction {
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
@@ -255,14 +301,16 @@ body>main .self_introduction{
     line-height: 2.0;
     margin-top: 40px
 }
+
 body>main .skill,
-body>main .portfolio{
+body>main .portfolio {
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 90px;
 }
-body>main .skill h2{
+
+body>main .skill h2 {
     text-align: center;
     font-size: 34px;
     line-height: 1.2;
@@ -271,39 +319,52 @@ body>main .skill h2{
     margin-bottom: 35px;
 }
 
-ol,li {
+ol,
+li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
 }
-body>main .skill>ol>li{
+
+body>main .skill>ol>li {
     float: left;
     width: 50%;
     box-sizing: border-box;
     border-right: 19px solid #FFFFFF;
     border-left: 19px solid white;
 }
-body>main .skill>ol{ 
+
+body>main .skill>ol {
     background: white;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
     padding: 5px 63px 52px 63px;
+    margin-bottom: 50px
 }
-body>main .skill h3{
+
+body>main .skill h3 {
     font-size: 14px;
     line-height: 1.1;
     color: #5B616C;
     margin-top: 47px;
     margin-bottom: 9px
 }
+
 body>main .skill .progress_bar {
     height: 7px;
     background: #CDF5E4;
     border-radius: 3px;
     overflow: hidden;
 }
+
 body>main .skill .progress_bar .progress {
     width: 60%;
     background: #07CB79;
@@ -311,13 +372,13 @@ body>main .skill .progress_bar .progress {
     border-radius: 3px;
     transform: translateX(0);
     transition: all 1s;
-
-}
-section.skill.offset .progress_bar .progress{
-	transform: translateX(-100%);
 }
 
-body>main .portfolio>h2{
+section.skill.offset .progress_bar .progress {
+    transform: translateX(-100%);
+}
+
+body>main .portfolio>h2 {
     text-align: center;
     font-size: 34px;
     line-height: 1.2;
@@ -325,57 +386,72 @@ body>main .portfolio>h2{
     color: #3D4451;
     margin-bottom: 35px;
 }
-body>main .portfolio{
+
+body>main .portfolio {
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
-body>main .portfolio>nav>ol>li{
+
+body>main .portfolio>nav>ol>li {
     float: left;
     margin-left: 63px;
     cursor: pointer;
 }
-body>main .portfolio>nav>ol>li:first-child{
+
+body>main .portfolio>nav>ol>li:first-child {
     margin-left: 0;
 }
-body>main .portfolio>nav>ol{
+
+body>main .portfolio>nav>ol {
     display: inline-block;
     vertical-align: top;
 }
-body>main .portfolio>nav{
+
+body>main .portfolio>nav {
     display: inline-block;
     vertical-align: top;
 }
-body>main .portfolio>nav .bar{
+
+body>main .portfolio>nav .bar {
     height: 5px;
     background: white;
     margin-bottom: 100px;
     border-radius: 2px;
 }
-body>main .portfolio>nav .bar_inner{
+
+body>main .portfolio>nav .bar_inner {
     height: 100%;
     background: green;
     border-radius: 2px;
     transition: all 0.7s
 }
+
 .portfolio .works {
     position: relative;
-
 }
+
 .portfolio .works .big,
 .portfolio .works .small {
     position: absolute;
+}
 
+.sticky {
+    background: white;
+    z-index: 1;
+    padding-top: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #3D4451;
 }
-.sticky{
-	background: white;
-	z-index: 1;
-	padding-top: 5px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.25);
-	color: #3D4451;
-}
-.swiper-button-prev,.swiper-button-next{
+
+.swiper-button-prev,
+.swiper-button-next {
     background-color: white;
     border-radius: 50%;
     width: 44px;
     height: 44px
+}
+
+.swiper-container {
+    height: 470px;
 }
