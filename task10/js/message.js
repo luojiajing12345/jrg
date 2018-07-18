@@ -55,19 +55,19 @@
             })
         },
         saveMessage: function () {
+            let myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
             console.log(name)
-            this.model.sava({
-                'name':name,
-                'content':content
-            }).then(function (object) {
+            this.model.sava(name,content).then(function (object) {
+                console.log(1)
                 let li = document.createElement('li')
                 li.innerText = `${object.attributes.name}:${object.attributes.content}`
                 let messageList = document.querySelector('#messageList')
                 messageList.appendChild(li)
                 myForm.querySelector('input[name=content]').value = ''
                 myForm.querySelector('input[name=name]').value = ''
+
             })
         }
     }
