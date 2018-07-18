@@ -377,7 +377,7 @@ body>main .skill .progress_bar .progress {
 section.skill.offset .progress_bar .progress {
     transform: translateX(-100%);
 }
-
+body>section>.messages,
 body>main .portfolio>h2 {
     text-align: center;
     font-size: 34px;
@@ -454,4 +454,13 @@ body>main .portfolio>nav .bar_inner {
 
 .swiper-container {
     height: 470px;
+}
+section>ol{
+    max-width: 940px;
+    margin: 0 auto;
+    border-top: #DDD solid 1px;
+}
+section>ol>li{
+    padding: 16px;
+    background-origin: 1px solid #ddddd;
 }

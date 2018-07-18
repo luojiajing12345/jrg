@@ -24,6 +24,5 @@
 				)
 			}
 		}
-
 		controller.init(view)
 	}.call()
