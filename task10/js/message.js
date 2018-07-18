@@ -4,7 +4,7 @@
         fetch: function () {
             var query = new AV.Query('Message')
             return query.find()
-        }，
+        },
         sava: function (name, content) {
             var Message = AV.Object.extend('Message');
             var message = new Message()
@@ -12,7 +12,7 @@
                 name: name,
                 content: content
             })
-        }，
+        },
         init: function () {
             var APP_ID = 'wk9uLovjaHEE3oGdJ3hgK4PB-gzGzoHsz'
             var APP_KEY = 'gvncU9L1S320YHLwHT3rA92Y'
