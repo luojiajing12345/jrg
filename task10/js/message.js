@@ -1,44 +1,16 @@
 ! function () {
-    var view = document.querySelector('section#messages')
+    var view = View('section#messages')
 
-    var model = {
-        fetch: function () {
-            var query = new AV.Query('Message')
-            return query.find()
-        },
-        sava: function (name, content) {
-            var Message = AV.Object.extend('Message');
-            var message = new Message()
-            return message.save({
-                name: name,
-                content: content
-            })
-        },
-        init: function () {
-            var APP_ID = 'wk9uLovjaHEE3oGdJ3hgK4PB-gzGzoHsz'
-            var APP_KEY = 'gvncU9L1S320YHLwHT3rA92Y'
-            AV.init({
-                appId: APP_ID,
-                appKey: APP_KEY
-            })
-        },
-    }
-
-
-    var controller = {
-        view: null,
-        model: null,
-        messageList: null,
-        init: function (view, model) {
-            this.view = view
-            this.model = model
-            this.model.init()
+    var model = Model({
+        resourceName: 'Message'
+    })
+    var controller = Controller({
+        init: function (view, controller) {
             this.messageList = view.querySelector('#messageList')
             this.form = view.querySelector('form')
-            this.loadMassage()
-            this.bindEvents()
+            this.loadMassages()
         },
-        loadMassage: function () {
+        loadMassages: function () {
             this.model.fetch().then((messages) => {
                 let array = messages.map((item) => item.attributes)
                 array.forEach((item) => {
@@ -49,7 +21,7 @@
             })
         },
         bindEvents: function () {
-            this.form.addEventListener('submit', (e)=> {
+            this.form.addEventListener('submit', (e) => {
                 e.preventDefault()
                 this.saveMessage()
             })
@@ -59,7 +31,10 @@
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
             console.log(name)
-            this.model.sava(name,content).then(function (object) {
+            this.model.save({
+                'name': name,
+                'content': content
+            }).then(function (object) {
                 console.log(1)
                 let li = document.createElement('li')
                 li.innerText = `${object.attributes.name}:${object.attributes.content}`
@@ -70,7 +45,8 @@
 
             })
         }
-    }
+    })
+
     controller.init(view, model)
 }.call()
 

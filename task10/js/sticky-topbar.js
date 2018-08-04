@@ -1,5 +1,6 @@
+
 ! function () {
-	var view = document.querySelector('#Top')
+	var view = View('#Top')
 
 	var controller = {
 		view: null,
@@ -26,7 +27,6 @@
 			this.view.classList.remove('sticky')
 		}
 	}
-
 	controller.init(view)
 	//controller.init.call(controller,view),如果使用对象来调用这个函数，那么这个对象就是this
 }.call()

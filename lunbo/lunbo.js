@@ -3,7 +3,7 @@ $('.images>img:nth-child(2)').addClass('enter')
 $('.images>img:nth-child(3)').addClass('enter')
 $('.images>img:nth-child(4)').addClass('enter')
 var n = 1
-setInterval(() => {
+var timer = setInterval(() => {
     $(`.images>img:nth-child(${x(n)})`).removeClass('current').addClass('leave').one('transitionend', (e) => {
         $(e.currentTarget).removeClass('leave').addClass('enter')
     })
@@ -20,3 +20,17 @@ function x(n) {
     }
     return n
 }
+document.addEventListener('visibilitychange',function(e) {
+    console.log(document.hidden)
+    if (document.hidden) {
+        window.clearInterval(timer)
+    }else{
+        timer = setInterval(() => {
+            $(`.images>img:nth-child(${x(n)})`).removeClass('current').addClass('leave').one('transitionend', (e) => {
+                $(e.currentTarget).removeClass('leave').addClass('enter')
+            })
+            $(`.images>img:nth-child(${x(n + 1)})`).removeClass('enter').addClass('current')
+            n += 1
+        }, 2000);
+    }
+})
