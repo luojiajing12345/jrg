@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div  id="mainxxx" class="wrapper"></div>
+    </main>
+    <script>
+        
+        keys = {
+            0:{0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',length:10},
+            1:{0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',length:9},
+            2:{0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m',length:7},
+            length:3
+        }//数组嵌套
+        hash = {
+            'q':'qq.com',
+            'w':'weibo.com',
+            'e':'ele.me',
+            'r':'renren.com',
+            't':'tenxun.com',
+            'y':'yy.com',
+            'u':'uc.com',
+            'i':'iqiyi.com',
+            'o':'ooo.com',
+            'p':'ppp.com',
+            'z':'zhihu.com',
+            'm':'meituan.com',
+        }//哈希不是数组，不需要有length
+        
+        hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') ||'null')//取出localStorage中的aaa对应的hash
+        if(hashInLocalStorage){
+            hash = hashInLocalStorage
+        }//如果不等于空，那么覆盖
+        index = 0
+        while(index<keys['length']){
+            divxxx = document.createElement('div')//创建一个div标签
+            mainxxx.appendChild(divxxx)//让mainxxx多一个孩子divxxx
+            row = keys[index]
+            index2 = 0
+            while(index2<row['length']){
+                kbdxxx = document.createElement('kbd')
+                kbdxxx.textContent = row[index2]
+                buttomxxx = document.createElement('buttom')
+                buttomxxx.textContent = '编辑'
+                buttomxxx.id = row[index2]
+                buttomxxx.onclick = function(xxx){
+                    key = xxx.target.id
+                    console.log(hash[key])
+                    x = prompt('给我一个网址')
+                    hash[key] = x
+                    localStorage.setItem('zzz',JSON.stringify(hash))
+                    console.log(hash)
+                }
+                kbdxxx.appendChild(buttomxxx)
+                divxxx.appendChild(kbdxxx)
+                index2++
+            }
+
+            index++
+        }
+
+        document.onkeypress = function(xxxooo){
+            console.log('我发现你输入了一个键');
+            //console.log(xxxooo);
+            console.log(xxxooo['key'])
+            hashkey = xxxooo['key']//xxxooo的value给hashkey
+            website = (hash[hashkey])//hash的value给website
+            //location.href = 'http://' + website//当前页面打开
+            window.open('http://' + website,'_blank')//新页面打开
+        }
+
+    </script>
+</body>
+</html>
