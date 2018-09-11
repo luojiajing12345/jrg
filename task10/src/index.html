@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>方方的简历</title>
+	
+	<script src="//at.alicdn.com/t/font_648422_rd07rkmk5f561or.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+</head>
+
+<body>
+	<div id='Top' class="top clearfix">
+		<div id='topNavBar' class="topNavBar-inner clearfix">
+			<a class="logo" href="#" alt="logo" style="float: left;">
+				<span class="rs">RS</span>
+				<span class="card">card</span>
+			</a>
+			<nav style="float: right;">
+				<ul class="clearfix">
+					<li>
+						<a href="#siteAbout">关于</a>
+					</li>
+					<li>
+						<a href="#siteSkills">技能</a>
+					</li>
+					<li class="menuTigger">
+						<a href="#siteWorks">作品</a>
+						<ul class="submenu">
+							<li>作品1</li>
+							<li>作品2</li>
+							<li>作品3</li>
+						</ul>
+					</li>
+					<li class="menuTigger">
+						<a href="#">博客</a>
+						<ul class="submenu">
+							<li>博客1</li>
+							<li>博客2</li>
+							<li>博客3</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">日历</a>
+					</li>
+					<li>
+						<a href="#">联系方式</a>
+					</li>
+					<li>
+						<a href="#">其他</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="banner" style="background-image: url(./img/background.jpg)">
+		<div class="mask">
+
+		</div>
+	</div>
+	<main class="main">
+
+		<div data-x id="siteAbout" class="UserCard clearfix">
+			<div class="pictureAndText clearfix">
+				<div class="picture">
+					<img src="./img/rs-photo-v1.jpg" alt="头像" width="299px" height="347px">
+				</div>
+				<div class="text">
+					<span class="welcome">Hello
+						<span class="triangle"></span>
+					</span>
+					<h1>方应杭</h1>
+					<p>前端开发工程师</p>
+					<hr>
+					<dl>
+						<dt>年龄</dt>
+						<dd>18</dd>
+						<dt>所在城市</dt>
+						<dd>北京</dd>
+						<dt>邮箱</dt>
+						<dd>fangyinghang@foxmail.com</dd>
+						<dt>手机</dt>
+						<dd>13812345678</dd>
+					</dl>
+				</div>
+
+			</div>
+
+			<footer class="foot">
+				<a href="#">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-qq"></use>
+					</svg>
+				</a>
+				<a href="#">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-weibo"></use>
+					</svg>
+				</a>
+				<a href="#">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-weixin"></use>
+					</svg>
+				</a>
+			</footer>
+		</div>
+		<p style="text-align: center">
+			<a href="#" class="downloadaa" href="#" target="_blank" download>下载 PDF 简历</a>
+		</p>
+
+		<p class="self_introduction">方应杭
+			<br> 技能：前端开发，Rails 开发，Node.js 开发
+		</p>
+		<section data-x id="siteSkills" class="skill">
+			<h2 class="">技能</h2>
+			<ol class="clearfix">
+				<li>
+					<h3>
+						HTML 5 & CSS 3
+					</h3>
+					<div class="progress_bar">
+						<div class="progress" style="width: 70%"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						JavaScript
+					</h3>
+					<div class="progress_bar">
+						<div class="progress" style="width: 80%"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						jQuery
+					</h3>
+					<div class="progress_bar">
+						<div class="progress" style="width: 60%"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						Vue.js
+					</h3>
+					<div class="progress_bar">
+						<div class="progress" style="width: 50%"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						React.js
+					</h3>
+					<div class="progress_bar">
+						<div class="progress" style="width: 40%"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						Node.js
+					</h3>
+					<div class="progress_bar">
+						<div class="progress" style="width: 35%"></div>
+					</div>
+				</li>
+			</ol>
+		</section>
+		<div data-x id="siteWorks" class="portfolio">
+			<h2 class>作品集</h2>
+			<div id='mySlides'>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<img src="./img2/nav-page.png" class="swiper-slide">
+						<img src='./img2/canvas.png' class="swiper-slide">
+						<img src='./img2/appleGalley.png' class="swiper-slide">
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+					<!-- 如果需要导航按钮 -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<section id="messages">
+		<h2 class="messages">留言</h2>
+		<ol id="messageList">
+			<li></li>
+		</ol>
+		<form id="postMessageForm" action="postMessageForm" style="width: 700px;margin: 50px auto">
+			<label for="">姓名</label>
+			<input type="text" name="name">
+			<label for="">内容</label>
+			<input type="text" name="content">
+			<input type="submit" value="提交">
+		</form>
+	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.7.3/dist/av-live-query-min.js"></script>
+	<!-- 类 -->
+	<script src="./js/base/View.js"></script>
+	<script src="./js/base/Model.js"></script>
+	<script src="./js/base/Controller.js"></script>
+	<!-- 模块化 -->
+	<script src="./js/init_swiper.js"></script>
+	<script src="./js/auto-slide-up.js"></script>
+	<script src="./js/sticky-topbar.js"></script>
+	<script src="./js/message.js"></script>
+	<script src="./js/smoothly-navigation.js" type="text/javascript"></script>
+
+</body>
+
+</html>

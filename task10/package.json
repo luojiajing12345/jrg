@@ -1,0 +1,21 @@
+{
+  "name": "task10",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src -d lib" 
+  },
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    
+  },
+  "author": "",
+  "license": "ISC"
+}
